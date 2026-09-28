@@ -1,0 +1,8 @@
+# Capturas de teste do navegador
+.playwright-mcp/
+
+# Editor e sistema
+.vscode/
+Thumbs.db
+desktop.ini
+.DS_Store
