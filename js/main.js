@@ -64,38 +64,6 @@
     animated.forEach((el) => el.classList.add('is-in'));
   }
 
-  /* ---------- Contadores ---------- */
-  const formatNumber = (n, el) =>
-    el.dataset.format === 'thousand' ? `${Math.round(n / 1000)} mil` : Math.round(n).toString();
-
-  function runCounter(el) {
-    const target = Number(el.dataset.count);
-    if (reduceMotion) { el.textContent = formatNumber(target, el); return; }
-    const duration = 1800;
-    const start = performance.now();
-    const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 4);
-      el.textContent = formatNumber(target * eased, el);
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }
-
-  const counters = document.querySelectorAll('[data-count]');
-  if ('IntersectionObserver' in window) {
-    const cio = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        runCounter(entry.target);
-        cio.unobserve(entry.target);
-      });
-    }, { threshold: 0.6 });
-    counters.forEach((el) => cio.observe(el));
-  } else {
-    counters.forEach(runCounter);
-  }
-
   /* ---------- Desmontagem do iPhone (topo) ----------
      A rolagem dentro da seção .xray vira um progresso de 0 a 1.
      O roteiro de cada peça (direção, rotação e tempo) fica em js/teardown.js.

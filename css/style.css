@@ -378,14 +378,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .steps__list h3 { font-size: 21px; margin: 22px 0 10px; font-weight: 800; }
 .steps__list p { color: var(--muted); font-size: 15px; }
 
-/* ---------- Números ---------- */
-.stats { background: var(--blue); padding: clamp(60px, 8vw, 100px) 0; }
-.stats__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.stat { text-align: center; padding: 10px; border-left: 1px solid rgba(255, 255, 255, .2); }
-.stat:first-child { border-left: 0; }
-.stat__num { display: block; font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 7vw, 92px); color: #fff; line-height: 1; letter-spacing: -.03em; }
-.stat__label { display: block; margin-top: 12px; color: rgba(255, 255, 255, .85); font-size: 16px; }
-
 /* ---------- Sobre ---------- */
 .about { background: var(--ink); }
 .about__inner { max-width: 820px; }
@@ -503,8 +495,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 
   .intro__badges { grid-template-columns: 1fr; }
   .intro__badges li { padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .stats__grid { grid-template-columns: 1fr; gap: 40px; }
-  .stat { border-left: 0; }
 }
 
 @media (max-width: 560px) {
